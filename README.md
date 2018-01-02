@@ -1,3 +1,4 @@
-# My Awesome Book
+# 64비트 멀티코어 OS 원리와 구조 정리
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+
+
