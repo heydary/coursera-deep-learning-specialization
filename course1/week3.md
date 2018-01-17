@@ -1,1 +1,1 @@
-# week 3. Shallow neural networks
+# Week 3. Shallow neural networks
