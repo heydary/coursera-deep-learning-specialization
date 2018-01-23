@@ -14,10 +14,11 @@ _book
 *.epub
 *.mobi
 *.pdf
-.DS_Store
 
-# iPython
-.ipynb_checkpoints/
+# macOS
+.DS_Store
 
 # Python
 .python-version
+.ipynb_checkpoints/
+__pycache__
