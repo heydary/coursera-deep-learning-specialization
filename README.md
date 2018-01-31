@@ -1,6 +1,6 @@
 # Coursera Deep Learning Specialization
 
-  Coursera에서 [Andrew Ng](http://www.andrewng.org/) 교수님이 진행하는 「[Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning)」 Course 강의 내용 정리
+  Coursera에서 [Andrew Ng](http://www.andrewng.org/) 교수님이 진행하는 《[Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning)》 Course 강의 내용 정리
 
 ## Course 1. Neural Networks and Deep Learning
 
