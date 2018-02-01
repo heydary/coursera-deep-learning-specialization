@@ -66,7 +66,9 @@
 
 
   Repeat { <br>
-    $w := w - \alpha\frac{\partial J(w, b)}{\partial w}$ <br>
+    $$
+    w := w - \alpha\frac{\partial J(w, b)}{\partial w}
+    $$ <br>
     $b := b - \alpha\frac{\partial J(w, b)}{\partial b}$ <br>
   }
 
