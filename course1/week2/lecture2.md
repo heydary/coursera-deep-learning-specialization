@@ -22,7 +22,7 @@
 
   Logistic regression은 supervised learning 문제에서 output 𝑦가 0 또는 1일 때 사용하는 learning algorithm이다. Logistic regression의 목적은 예측값과 트레이닝 사이의 오류를 최소화하는 것이다.
 
-  $x$가 주어졌을 때 $\hat{y} = P(y=1 | x)$ 이다. $\hat{y}$ 의 범위는 $0 \leq \hat{y} \leq 1$ 이다.
+  $x$ 가 주어졌을 때 $\hat{y} = P(y=1 | x)$ 이다. $\hat{y}$ 의 범위는 $0 \leq \hat{y} \leq 1$ 이다.
 
   * $n_{x}$ : feature 개수
   * input feature vector : $x \in \mathbb{R}^{n_{x}}$
@@ -35,7 +35,7 @@
   ![](img/3.png)
 
   * Linear function $z = w^Tx + b$ 의 결과값을 0과 1 사이의 값으로 변환하기 위해 sigmoid function을 사용한다.
-  * $\lim_{z\to\infty} \sigma(z) = 1$
+  * $$\lim_{z\to\infty} \sigma(z) = 1$$
   * $\lim_{z\to-\infty} \sigma(z) = 0$
   * $z = 0 \to \sigma(z) = 0.5$
 
