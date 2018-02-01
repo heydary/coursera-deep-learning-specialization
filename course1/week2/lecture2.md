@@ -70,3 +70,17 @@
 
   }
   * $$\alpha$$ : learning rate
+
+
+## Python and Vectorization
+
+### Vectorization
+  
+#### Non-vectorized version
+
+  ```py
+  z = 0
+  for i in range(n_x):
+    z += w[i] * x[i]
+  z += b
+  ```
