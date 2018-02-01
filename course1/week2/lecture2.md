@@ -1,3 +1,5 @@
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
 # Week 2. Neural Networks Basics
 
 ## Logistic Regression as a Neural Network
