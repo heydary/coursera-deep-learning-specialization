@@ -65,9 +65,9 @@
   ![](img/4.png)
 
 
-  Repeat {
+  Repeat \{
     $$w := w - \alpha\frac{\partial J(w, b)}{\partial w}$$
     $$b := b - \alpha\frac{\partial J(w, b)}{\partial b}$$
-  }
+  \}
 
   * $$\alpha$$ : learning rate
