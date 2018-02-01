@@ -63,11 +63,17 @@
   Cost function $$J(w, b)$$ 를 최소화하는 Parameter $$w$$, $$b$$ 를 구해야 한다.
 
   ![](img/4.png)
+  
+  $$w := w - \alpha\frac{\partial J(w, b)}{\partial w}$$
+  $$b := b - \alpha\frac{\partial J(w, b)}{\partial b}$$
 
-
-  Repeat \{
+  ```
+  Repeat {
+  ```
     $$w := w - \alpha\frac{\partial J(w, b)}{\partial w}$$
     $$b := b - \alpha\frac{\partial J(w, b)}{\partial b}$$
-  \}
+  ```
+  }
+  ```
 
   * $$\alpha$$ : learning rate
