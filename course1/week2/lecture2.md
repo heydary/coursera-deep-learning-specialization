@@ -75,6 +75,8 @@
 ## Python and Vectorization
 
 ### Vectorization
+
+  $$w, x \in \mathbb{R}^{n_{x}}$$
   
 #### Non-vectorized version
 
@@ -83,4 +85,9 @@
   for i in range(n_x):
     z += w[i] * x[i]
   z += b
+  ```
+#### Vectorized version
+  
+  ```py
+  z = np.dot(w.T, x) + b
   ```
