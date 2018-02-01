@@ -1,5 +1,3 @@
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-
 # Week 2. Neural Networks Basics
 
 ## Logistic Regression as a Neural Network
@@ -24,54 +22,52 @@
 
   Logistic regression은 supervised learning 문제에서 output 𝑦가 0 또는 1일 때 사용하는 learning algorithm이다. Logistic regression의 목적은 예측값과 트레이닝 사이의 오류를 최소화하는 것이다.
 
-  $x$ 가 주어졌을 때 $\hat{y} = P(y=1 | x)$ 이다. $\hat{y}$ 의 범위는 $0 \leq \hat{y} \leq 1$ 이다.
+  $$x$$ 가 주어졌을 때 $$\hat{y} = P(y=1 | x)$$ 이다. $$\hat{y}$$ 의 범위는 $$0 \leq \hat{y} \leq 1$$ 이다.
 
-  * $n_{x}$ : feature 개수
-  * input feature vector : $x \in \mathbb{R}^{n_{x}}$
-  * training label : $y \in \{0, 1\}$
-  * Parameter : $w \in \mathbb{R}^{n_{x}}, b \in \mathbb{R}$
-  * output : $\hat{y} = \sigma(w^Tx + b) = \sigma(z) = \frac{1}{1 + e^{-z}}$ : Sigmoid function
+  * $$n_{x}$$ : feature 개수
+  * input feature vector : $$x \in \mathbb{R}^{n_{x}}$$
+  * training label : $$y \in \{0, 1\}$$
+  * Parameter : $$w \in \mathbb{R}^{n_{x}}, b \in \mathbb{R}$$
+  * output : $$\hat{y} = \sigma(w^Tx + b) = \sigma(z) = \frac{1}{1 + e^{-z}}$$ : Sigmoid function
 
 #### Sigmoid function
 
   ![](img/3.png)
 
-  * Linear function $z = w^Tx + b$ 의 결과값을 0과 1 사이의 값으로 변환하기 위해 sigmoid function을 사용한다.
+  * Linear function $$z = w^Tx + b$$의 결과값을 0과 1 사이의 값으로 변환하기 위해 sigmoid function을 사용한다.
   * $$\lim_{z\to\infty} \sigma(z) = 1$$
-  * $\lim_{z\to-\infty} \sigma(z) = 0$
-  * $z = 0 \to \sigma(z) = 0.5$
+  * $$\lim_{z\to-\infty} \sigma(z) = 0$$
+  * $$z = 0 \to \sigma(z) = 0.5$$
 
 ### Logistic Regression: Cost Function
 
-  $\{(x^{(1)}, y^{(1)}), \dots , (x^{(m)},, y^{(m )} )\}$ 이 주어졌을 때 $\hat{y}^{(i)} \approx y^{(i)}$ 가 되어야 한다. 참고로 $x^{(i)}$ 는 $i$ 번째 training example을 의미한다.
+  $$\{(x^{(1)}, y^{(1)}), \dots , (x^{(m)},, y^{(m )} )\}$$ 이 주어졌을 때 $$\hat{y}^{(i)} \approx y^{(i)}$$ 가 되어야 한다. 참고로 $$x^{(i)}$$ 는 $$i$$ 번째 training example을 의미한다.
 
 #### Loss(Error) function
 
-  Loss function은 한 training example에 대한 에러를 계산하는 함수로 prediction $\hat{y}$ 와 output $y$ 의 차이를 구한다.
+  Loss function은 한 training example에 대한 에러를 계산하는 함수로 prediction $$\hat{y}$$ 와 output $$y$$ 의 차이를 구한다.
 
-  $L(\hat{y}^{(i)}, y^{(i)}) =  -\{(y^{(i)}\log(\hat{y}^{(i)}) + (1 - y^{(i)})\log(1 - \hat{y}^{(i)})\}$
+  $$L(\hat{y}^{(i)}, y^{(i)}) =  -\{(y^{(i)}\log(\hat{y}^{(i)}) + (1 - y^{(i)})\log(1 - \hat{y}^{(i)})\}$$
 
-  * $y^{(i)} = 1 \to L(\hat{y}^{(i)}, y^{(i)}) =  -\log(\hat{y}^{(i)})$. 에러를 최소화하기 위해서는  $-\log(\hat{y}^{(i)}) \to 0$ 이므로 $\hat{y}^{(i)} \to 1$ 이 된다.
-  * $y^{(i)} = 0 \to L(\hat{y}^{(i)}, y^{(i)}) =  -\log(1 - \hat{y}^{(i)})$. 에러를 최소화하기 위해서는  $-\log(1- \hat{y}^{(i)}) \to 0$ 이므로 $\hat{y}^{(i)} \to 0$ 이 된다.
+  * $$y^{(i)} = 1 \to L(\hat{y}^{(i)}, y^{(i)}) =  -\log(\hat{y}^{(i)})$$. 에러를 최소화하기 위해서는  $$-\log(\hat{y}^{(i)}) \to 0$$ 이므로 $$\hat{y}^{(i)} \to 1$$ 이 된다.
+  * $$y^{(i)} = 0 \to L(\hat{y}^{(i)}, y^{(i)}) =  -\log(1 - \hat{y}^{(i)})$$. 에러를 최소화하기 위해서는  $$-\log(1- \hat{y}^{(i)}) \to 0$$ 이므로 $$\hat{y}^{(i)} \to 0$$ 이 된다.
 
 #### Cost function
 
   Cost function은 전체 training set의 loss function의 평균이다.
 
-  $J(w, b) = \frac{1}{m}\sum_{i = 1}^{m}L(\hat{y}^{(i)}, y^{(i)}) = -\frac{1}{m}\sum_{i = 1}^{m}\{y^{(i)}\log(\hat{y}^{(i)}) + (1 - y^{(i)})\log(1 - \hat{y}^{(i)})\}$
+  $$J(w, b) = \frac{1}{m}\sum_{i = 1}^{m}L(\hat{y}^{(i)}, y^{(i)}) = -\frac{1}{m}\sum_{i = 1}^{m}\{y^{(i)}\log(\hat{y}^{(i)}) + (1 - y^{(i)})\log(1 - \hat{y}^{(i)})\}$$
 
 ### Gradient Descent
 
-  Cost function $J(w, b)$ 를 최소화하는 Parameter $w$, $b$ 를 구해야 한다.
+  Cost function $$J(w, b)$$ 를 최소화하는 Parameter $$w$$, $$b$$ 를 구해야 한다.
 
   ![](img/4.png)
 
 
-  Repeat { <br>
-    $$
-    w := w - \alpha\frac{\partial J(w, b)}{\partial w}
-    $$ <br>
-    $b := b - \alpha\frac{\partial J(w, b)}{\partial b}$ <br>
+  Repeat {
+    $$w := w - \alpha\frac{\partial J(w, b)}{\partial w}$$
+    $$b := b - \alpha\frac{\partial J(w, b)}{\partial b}$$
   }
 
-  * $\alpha$ : learning rate
+  * $$\alpha$$ : learning rate
